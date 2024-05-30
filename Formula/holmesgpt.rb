@@ -13,6 +13,8 @@ class Holmesgpt < Formula
     def install
         libexec.install Dir["*"]
         bin.write_exec_script (libexec/"holmes")
+        # our binaries are built with pyinstaller and the first executable run is very slow because it unzips packages
+        # to work around that, we "warm up" the binary here during installation so it is fast when the user runs it for the first time
         system libexec/"holmes", "version"
     end
     
