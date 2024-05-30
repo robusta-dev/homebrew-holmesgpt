@@ -12,7 +12,7 @@ class Holmesgpt < Formula
   
     def install
         libexec.install Dir["*"]
-        bin.write_exec_script (libexec/"holmesgpt")
+        bin.write_exec_script (libexec/"main")
     end
     
     test do
