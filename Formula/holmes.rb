@@ -1,4 +1,4 @@
-class Holmes < Formula
+class HolmesGPT < Formula
     desc "The Open Source DevOps Assistant"
     homepage "https://github.com/robusta-dev/experimental-ai-investigation"
   
@@ -12,11 +12,11 @@ class Holmes < Formula
   
     def install
         libexec.install Dir["*"]
-        bin.write_exec_script (libexec/"holmes")
+        bin.write_exec_script (libexec/"holmesgpt")
     end
     
     test do
-        system "#{bin}/holmes", "version"
+        system "#{bin}/holmesgpt", "version"
     end
 end
   
