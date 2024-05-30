@@ -13,7 +13,7 @@ class Holmesgpt < Formula
     def install
         libexec.install Dir["*"]
         bin.write_exec_script (libexec/"holmes")
-        system "#{bin}/holmes", "version"
+        shell_output("#{bin}/holmes version")
     end
     
     test do
