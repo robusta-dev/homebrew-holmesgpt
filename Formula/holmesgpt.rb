@@ -1,4 +1,4 @@
-class HolmesGPT < Formula
+class Holmesgpt < Formula
     desc "The Open Source DevOps Assistant"
     homepage "https://github.com/robusta-dev/experimental-ai-investigation"
   
