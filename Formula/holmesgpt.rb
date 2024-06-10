@@ -3,10 +3,10 @@ class Holmesgpt < Formula
     homepage "https://github.com/robusta-dev/experimental-ai-investigation"
   
     if OS.mac?
-        url "https://github.com/robusta-dev/holmesgpt/releases/download/0.2.1/holmes-macos-latest-0.2.1.zip"
-        sha256 "8dbc7cb725c7203092ba0c0bdedb7762bc6f39a441905efbdf806cda322ba8be"
+        url "https://github.com/robusta-dev/holmesgpt/releases/download/0.1.17-test/holmes-macos-latest-0.1.17-test.zip"
+        sha256 "f3196e487fb44501525c04ff495ca0517477084d3ed14973e54178574666d85a"
     elsif OS.linux?
-        url "https://github.com/robusta-dev/holmesgpt/releases/download/0.2.1/holmes-ubuntu-latest-0.2.1.zip"
+        url "https://github.com/robusta-dev/holmesgpt/releases/download/0.1.17-test/holmes-ubuntu-20.04-0.1.17-test.zip"
         sha256 ""
     end
   
