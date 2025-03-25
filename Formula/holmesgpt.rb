@@ -4,10 +4,10 @@ class Holmesgpt < Formula
   
     if OS.mac?
         url "https://github.com/robusta-dev/holmesgpt/releases/download/0.10.2/holmes-macos-latest-0.10.2.zip"
-        sha256 "4e3f3d6751fe2a0fbad4217dbff9560bd75ae1075221503507f4cb9c258bd861"
+        sha256 "d53f65271fb26f04242efffa8023c4f8ea8a50db2ade94ae26c2c3b1993f11a5"
     elsif OS.linux?
         url "https://github.com/robusta-dev/holmesgpt/releases/download/0.10.2/holmes-ubuntu-22.04-0.10.2.zip"
-        sha256 "03f06f62e1c0dc4489cbbd8c876c56212d909855d9fb6e7e90ebbefc389c1bd6"
+        sha256 "26307422c8045e5cf658b2648f2710452a6884c7ab83c2abcbdcfbced9b7f205"
     end
   
     def install
