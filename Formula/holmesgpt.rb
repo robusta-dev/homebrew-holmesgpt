@@ -1,6 +1,6 @@
 class Holmesgpt < Formula
-    desc "The Open Source DevOps Assistant"
-    homepage "https://github.com/robusta-dev/experimental-ai-investigation"
+    desc "AI Agent for Cloud Troubleshooting and Alert Investigation"
+    homepage "https://github.com/HolmesGPT/holmesgpt"
   
     if OS.mac?
         url "https://github.com/HolmesGPT/holmesgpt/releases/download/0.16.3/holmes-macos-latest-0.16.3.zip"
