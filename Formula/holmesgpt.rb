@@ -10,6 +10,10 @@ class Holmesgpt < Formula
         sha256 "2978c8f715246d0767acb581c06a6af2f928649347cefd97b6f24ed5863a8cd4"
     end
   
+    # Skip relocation/stripping of PyInstaller-bundled dylibs (e.g. PIL/.dylibs/libpng16.16.dylib)
+    # that Homebrew cannot relink due to insufficient header padding
+    skip_clean "libexec"
+
     def install
         libexec.install Dir["*"]
         bin.write_exec_script (libexec/"holmes")
@@ -18,6 +22,13 @@ class Holmesgpt < Formula
         system libexec/"holmes", "version"
     end
     
+    def caveats
+        <<~EOS
+            HolmesGPT has been installed successfully!
+            Run `holmes --help` to get started.
+        EOS
+    end
+
     test do
         system "#{bin}/holmes", "version"
     end
