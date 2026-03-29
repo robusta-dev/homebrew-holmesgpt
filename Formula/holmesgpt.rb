@@ -10,13 +10,25 @@ class Holmesgpt < Formula
         sha256 "2978c8f715246d0767acb581c06a6af2f928649347cefd97b6f24ed5863a8cd4"
     end
   
-    # Skip relocation/stripping of PyInstaller-bundled dylibs (e.g. PIL/.dylibs/libpng16.16.dylib)
-    # that Homebrew cannot relink due to insufficient header padding
-    skip_clean "libexec"
-
     def install
         libexec.install Dir["*"]
         bin.write_exec_script (libexec/"holmes")
+
+        # Temporarily gzip bundled dylibs whose Mach-O headers are too small for
+        # the absolute paths Homebrew's relocation step tries to write.
+        # Gzipped files are not valid Mach-O, so Homebrew skips them.
+        # They are restored in post_install below.
+        Dir.glob(libexec/"_internal/PIL/.dylibs/*.dylib").each do |f|
+            system "gzip", f
+        end
+    end
+
+    def post_install
+        # Restore the gzipped dylibs now that Homebrew relocation is done
+        Dir.glob(libexec/"_internal/PIL/.dylibs/*.dylib.gz").each do |f|
+            system "gunzip", f
+        end
+
         # our binaries are built with pyinstaller and the first executable run is very slow because it unzips packages
         # to work around that, we "warm up" the binary here during installation so it is fast when the user runs it for the first time
         system libexec/"holmes", "version"
