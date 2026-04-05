@@ -2,12 +2,10 @@ class Holmesgpt < Formula
     desc "AI Agent for Cloud Troubleshooting and Alert Investigation"
     homepage "https://github.com/HolmesGPT/holmesgpt"
  
+    url "https://github.com/HolmesGPT/holmesgpt/releases/download/0.23.0/holmes-linux-amd64-0.23.0.zip"
+    sha256 "2978c8f715246d0767acb581c06a6af2f928649347cefd97b6f24ed5863a8cd4"
+
     depends_on :linux
-  
-if OS.linux?
-        url "https://github.com/HolmesGPT/holmesgpt/releases/download/0.23.0/holmes-linux-amd64-0.23.0.zip"
-        sha256 "2978c8f715246d0767acb581c06a6af2f928649347cefd97b6f24ed5863a8cd4"
-    end
 
 
     def install
