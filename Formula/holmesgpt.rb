@@ -15,13 +15,12 @@ class Holmesgpt < Formula
 
     def install
         if OS.mac?
-            opoo <<~EOS
+            raise <<~EOS
                 On macOS, HolmesGPT is now distributed as a Cask. Please run:
                   brew install --cask holmesgpt
                 If you previously installed HolmesGPT as a formula, first uninstall it:
                   brew uninstall holmesgpt
             EOS
-            return
         end
         libexec.install Dir["*"]
         bin.write_exec_script (libexec/"holmes")
