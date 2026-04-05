@@ -15,12 +15,7 @@ cask "holmesgpt" do
 
   binary "holmes/holmes"
 
-  caveats <<~EOS
-    To verify the installation, run:
-      holmes version
-  EOS
-
   postflight do
-    system_command "#{staged_path}/holmes/holmes", args: ["version"]
+    system_command "#{staged_path}/holmes/holmes", args: ["version"], print_stdout: true
   end
 end
