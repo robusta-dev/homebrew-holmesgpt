@@ -2,9 +2,12 @@ class Holmesgpt < Formula
     desc "AI Agent for Cloud Troubleshooting and Alert Investigation"
     homepage "https://github.com/HolmesGPT/holmesgpt"
 
-    # Homebrew requires a valid, fetchable URL to load the formula. On macOS we don't actually
-    # install this (the install method redirects users to the cask), but without a real URL
-    # the formula either fails to load or fails to fetch before reaching the install step.
+    # macOS installation has moved to a Cask (see Casks/holmesgpt.rb). This formula is kept
+    # only to show a migration message to existing formula users on macOS.
+    # Homebrew requires a valid, fetchable URL to load the formula, so we provide the real
+    # macOS URL even though we never actually install it (the install method redirects users
+    # to the cask). Without a real URL the formula either fails to load or fails to fetch
+    # before reaching the install step.
     if OS.mac?
         url "https://github.com/HolmesGPT/holmesgpt/releases/download/0.23.0/holmes-darwin-arm64-0.23.0.zip"
         sha256 "49cfdf9fc0ddb366812a83812d9499d5307b868b9cf7c6753a512511741fc66e"
@@ -15,7 +18,7 @@ class Holmesgpt < Formula
 
     def install
         if OS.mac?
-            raise <<~EOS
+            odie <<~EOS
                 On macOS, HolmesGPT is now distributed as a Cask. Please run:
                   brew install --cask holmesgpt
                 If you previously installed HolmesGPT as a formula, first uninstall it:
