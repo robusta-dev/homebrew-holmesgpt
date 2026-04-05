@@ -14,4 +14,13 @@ cask "holmesgpt" do
   homepage "https://github.com/HolmesGPT/holmesgpt"
 
   binary "holmes/holmes"
+
+  caveats <<~EOS
+    To verify the installation, run:
+      holmes version
+  EOS
+
+  postflight do
+    system_command "#{staged_path}/holmes/holmes", args: ["version"]
+  end
 end
