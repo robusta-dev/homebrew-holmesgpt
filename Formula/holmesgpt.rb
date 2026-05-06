@@ -3,11 +3,11 @@ class Holmesgpt < Formula
     homepage "https://github.com/HolmesGPT/holmesgpt"
   
     if OS.mac?
-        url "https://github.com/HolmesGPT/holmesgpt/releases/download/0.26.0/holmes-darwin-arm64-0.26.0.zip"
-        sha256 "92b99140632d1408f8a95056cb4069733c4de1fe8ed356e4628877105a60f08c"
+        url "https://github.com/HolmesGPT/holmesgpt/releases/download/0.27.0/holmes-darwin-arm64-0.27.0.zip"
+        sha256 "7afcc1ceff1ff7d1b8e29ecc5215aa472332de5b256d64038c475fcaba644d72"
     elsif OS.linux?
-        url "https://github.com/HolmesGPT/holmesgpt/releases/download/0.26.0/holmes-linux-amd64-0.26.0.zip"
-        sha256 "243bb8cd2a1399f4fa5885323625b477646db8842444bb9852fefba587a20460"
+        url "https://github.com/HolmesGPT/holmesgpt/releases/download/0.27.0/holmes-linux-amd64-0.27.0.zip"
+        sha256 "e395e6bfeb7291790f81916938cefa6608096c78d1002ba813f472016767126e"
     end
   
     def install
